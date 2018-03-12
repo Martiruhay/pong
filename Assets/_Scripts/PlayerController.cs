@@ -6,23 +6,27 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
 
+    Rigidbody2D rb;
     float width;
 
 	void Start ()
     {
+        rb = GetComponent<Rigidbody2D>();
         width = GetComponent<SpriteRenderer>().bounds.size.x;
 	}
 	
 	void Update ()
     {
+        Vector2 vel = Vector2.zero;
 		if (InputManager.right)
         {
-            transform.Translate(speed * Time.deltaTime * Vector2.right);
+            vel += speed * Vector2.right;
         }
         if (InputManager.left)
         {
-            transform.Translate(speed * Time.deltaTime * Vector2.left);
+            vel += speed * Vector2.left;
         }
+        rb.velocity = vel;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
