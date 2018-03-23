@@ -12,12 +12,8 @@ public class Ball : MonoBehaviour
 	void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.velocity = speed * Vector2.up;
-	}
-	
-	void Update ()
-    {
-		
+        Vector2 startDir = new Vector2(Random.Range(1f, -1f), 1f).normalized;
+        rb.velocity = speed * startDir;
 	}
 
     public void Bounce(float variance)
@@ -30,4 +26,8 @@ public class Ball : MonoBehaviour
         rb.velocity = speed * dir;
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioManager.instance.Play("boing");
+    }
 }
