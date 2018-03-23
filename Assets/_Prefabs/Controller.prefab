@@ -63,7 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9326ae004e3860e4eb606de3dbab5c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 1
+  level: 0
+  levelUpTime: 10
   framePrefab: {fileID: 1721668684898638, guid: 1c3b9682ab77e4c4d85355d244bb1705,
     type: 2}
   levels:
@@ -81,3 +82,4 @@ MonoBehaviour:
     - {x: -8, y: -4.5, z: 0}
     cameraSize: 9
   locked: 0
+  levelTime: 0

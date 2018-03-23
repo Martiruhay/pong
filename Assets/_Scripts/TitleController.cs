@@ -12,7 +12,9 @@ public class TitleController : MonoBehaviour
 
     void Update ()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+        else if (Input.anyKeyDown)
             SceneManager.LoadSceneAsync("game");
 	}
 }
